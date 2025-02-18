@@ -1,0 +1,112 @@
+<dialog
+  id="edit-dialog"
+  class="mt-4 flex-col items-center gap-4 rounded-sm bg-bg-light px-4 py-4 text-brand-secondary shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px] backdrop:bg-[rgba(0,_0,_0,_0.6)] md:mt-24 md:px-8 dark:bg-surface-dark-100 dark:text-bg-lighter">
+  <h2 class="text-center text-xl font-bold">Edit details</h2>
+  <p id="edit-confirmation-box" class="py-4 text-center text-sm"></p>
+  <form
+    class="flex flex-col gap-4 rounded-sm px-4 pb-4 pt-8"
+    action="../scripts/admin_functionality.php"
+    autocomplete="off"
+    readonly
+    onfocus="this.removeAttribute('readonly');"
+    method="POST"
+    enctype="multipart/form-data">
+    <input type="hidden" name="edit-user-id" value="" />
+    <label class="grid grid-cols-5" for="edit-user-email">
+      <span class="col-span-2 mr-4">Email:</span>
+      <input
+        class="input-text-custom col-span-3"
+        autocomplete="off"
+        readonly
+        onfocus="this.removeAttribute('readonly');"
+        placeholder="Email"
+        type="email"
+        id="edit-user-email"
+        name="edit-user-email"
+        required />
+    </label>
+    <label class="grid grid-cols-5" for="edit-user-first-name">
+      <span class="col-span-2 mr-4">First Name:</span>
+      <input
+        class="input-text-custom col-span-3"
+        placeholder="First Name"
+        type="text"
+        id="edit-user-first-name"
+        name="edit-user-first-name"
+        required />
+    </label>
+    <label class="grid grid-cols-5" for="edit-user-last-name">
+      <span class="col-span-2 mr-4">Last Name:</span>
+      <input
+        class="input-text-custom col-span-3"
+        placeholder="Last Name"
+        type="text"
+        id="edit-user-last-name"
+        name="edit-user-last-name"
+        required />
+    </label>
+    <label class="grid grid-cols-5" for="edit-user-password">
+      <span class="col-span-2 mr-4">Password:</span>
+      <input
+        class="input-text-custom col-span-3"
+        type="password"
+        id="edit-user-password"
+        placeholder="Enter new password"
+        name="edit-user-password" />
+    </label>
+    <label
+      for="edit-user-image"
+      class="relative isolate ml-12 grid aspect-square w-28 cursor-pointer grid-rows-2 items-center self-center overflow-hidden rounded-sm border-2 border-brand-secondary bg-surface-dark-300 p-4 text-center md:ml-10 md:w-[150px] dark:border-bg-lighter">
+      <input
+        id="edit-user-image"
+        name="edit-user-image"
+        type="file"
+        class="hidden"
+        accept="image/*" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="m-auto h-6 w-6 text-brand-secondary dark:text-bg-lighter">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+      </svg>
+      <div
+        id="label-bg"
+        class="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-25"></div>
+      <h5
+        id="user-img-description"
+        class="mb-2 text-xl font-semibold tracking-tight text-brand-secondary dark:text-bg-lighter">
+        Change picture
+      </h5>
+    </label>
+    <label id="role-input" class="grid grid-cols-5" for="edit-user-type">
+      <span class="col-span-2 mr-4">User Role:</span>
+      <select
+        id="edit-user-type"
+        name="edit-user-type"
+        required
+        class="input-text-custom col-span-3">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+        <option value="owner">Owner</option>
+      </select>
+    </label>
+    <div class="flex flex-wrap justify-around gap-2">
+      <button type="submit" class="btn-info w-40">
+        <span></span>
+        <span></span>
+        <span class="relative">Confirm changes</span>
+      </button>
+      <button id="edit-dialog-close" type="button" class="btn-warning w-40">
+        <span></span>
+        <span></span>
+        <span>Cancel</span>
+      </button>
+    </div>
+  </form>
+</dialog>

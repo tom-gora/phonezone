@@ -1,0 +1,122 @@
+<!-- inline style fallback as tailwind has a bad day -->
+<nav
+  id="navigation"
+  style="padding-inline: 1rem"
+  class="px-13 fixed right-[-100%] top-0 z-20 flex h-dvh w-screen flex-col items-end justify-center bg-bg-light py-40 font-brand-display transition-all duration-300 motion-reduce:transition-none md:!right-0 md:top-0 md:z-[300] md:h-auto md:w-screen md:flex-row md:items-center md:justify-end md:px-4 md:py-0 md:pl-4 md:duration-0 dark:bg-bg-darker">
+  <div
+    id="mobile-store-logo"
+    class="absolute left-[-200%] right-0 top-0 z-50 mx-auto h-20 bg-bg-light pt-4 md:hidden dark:bg-bg-darker">
+    <a
+      href="index.php"
+      style="right: 0px"
+      class="absolute left-0 right-0 top-4 mx-auto h-14 transition-all duration-300 motion-reduce:transition-none">
+      <img
+        width="188"
+        src="res/pz_logo_1_dark.svg"
+        style="left: 0px; right: 0px"
+        class="mx-auto my-auto h-14"
+        alt="Store Logo" />
+    </a>
+  </div>
+  <div
+    class="mr-9 flex w-14 scale-110 items-center justify-end md:mr-12 md:h-full md:scale-100">
+    <div
+      id="theme-toggle"
+      class="relative mb-16 flex h-6 w-12 items-center justify-between rounded bg-surface-light-100 px-0 shadow-inner shadow-surface-dark-300 md:mb-4 dark:bg-surface-dark-200 dark:shadow-bg-darker">
+      <svg
+        class="ml-[3px]"
+        id="theme-toggle-sun"
+        height="17px"
+        width="17px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12Z" />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 1.25C12.414 1.25 12.75 1.58579 12.75 2V3C12.75 3.41421 12.4142 3.75 12 3.75C11.5858 3.75 11.25 3.41421 11.25 3V2C11.25 1.58579 11.5858 1.25 12 1.25ZM4.39861 4.39861C4.6915 4.10572 5.16638 4.10572 5.45927 4.39861L5.85211 4.79145C6.145 5.08434 6.145 5.55921 5.85211 5.85211C5.55921 6.145 5.08434 6.145 4.79145 5.85211L4.39861 5.45927C4.10572 5.16638 4.10572 4.6915 4.39861 4.39861ZM19.6011 4.39887C19.894 4.69176 19.894 5.16664 19.6011 5.45953L19.2083 5.85237C18.9154 6.14526 18.4405 6.14526 18.1476 5.85237C17.8547 5.55947 17.8547 5.0846 18.1476 4.79171L18.5405 4.39887C18.8334 4.10598 19.3082 4.10598 19.6011 4.39887ZM1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H3C3.41421 11.25 3.75 11.5858 3.75 12C3.75 12.4142 3.41421 12.75 3 12.75H2C1.58579 12.75 1.25 12.4142 1.25 12ZM20.25 12C20.25 11.5858 20.5858 11.25 21 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H21C20.5858 12.75 20.25 12.4142 20.25 12ZM18.1476 18.1476C18.4405 17.8547 18.9154 17.8547 19.2083 18.1476L19.6011 18.5405C19.894 18.8334 19.894 19.3082 19.6011 19.6011C19.3082 19.894 18.8334 19.894 18.5405 19.6011L18.1476 19.2083C17.8547 18.9154 17.8547 18.4405 18.1476 18.1476ZM5.85211 18.1479C6.145 18.4408 6.145 18.9157 5.85211 19.2086L5.45927 19.6014C5.16638 19.8943 4.6915 19.8943 4.39861 19.6014C4.10572 19.3085 4.10572 18.8336 4.39861 18.5407L4.79145 18.1479C5.08434 17.855 5.55921 17.855 5.85211 18.1479ZM12 20.25C12.4142 20.25 12.75 20.5858 12.75 21V22C12.75 22.4142 12.4142 22.75 12 22.75C11.5858 22.75 11.25 22.4142 11.25 22V21C11.25 20.5858 11.5858 20.25 12 20.25Z" />
+      </svg>
+
+      <svg
+        id="theme-toggle-moon"
+        class="mr-[4px]"
+        width="16px"
+        height="16px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M19.9001 2.30719C19.7392 1.8976 19.1616 1.8976 19.0007 2.30719L18.5703 3.40247C18.5212 3.52752 18.4226 3.62651 18.298 3.67583L17.2067 4.1078C16.7986 4.26934 16.7986 4.849 17.2067 5.01054L18.298 5.44252C18.4226 5.49184 18.5212 5.59082 18.5703 5.71587L19.0007 6.81115C19.1616 7.22074 19.7392 7.22074 19.9001 6.81116L20.3305 5.71587C20.3796 5.59082 20.4782 5.49184 20.6028 5.44252L21.6941 5.01054C22.1022 4.849 22.1022 4.26934 21.6941 4.1078L20.6028 3.67583C20.4782 3.62651 20.3796 3.52752 20.3305 3.40247L19.9001 2.30719Z" />
+        <path
+          d="M16.0328 8.12967C15.8718 7.72009 15.2943 7.72009 15.1333 8.12967L14.9764 8.52902C14.9273 8.65407 14.8287 8.75305 14.7041 8.80237L14.3062 8.95987C13.8981 9.12141 13.8981 9.70107 14.3062 9.86261L14.7041 10.0201C14.8287 10.0694 14.9273 10.1684 14.9764 10.2935L15.1333 10.6928C15.2943 11.1024 15.8718 11.1024 16.0328 10.6928L16.1897 10.2935C16.2388 10.1684 16.3374 10.0694 16.462 10.0201L16.8599 9.86261C17.268 9.70107 17.268 9.12141 16.8599 8.95987L16.462 8.80237C16.3374 8.75305 16.2388 8.65407 16.1897 8.52902L16.0328 8.12967Z" />
+        <path
+          d="M12 22C17.5228 22 22 17.5228 22 12C22 11.5373 21.3065 11.4608 21.0672 11.8568C19.9289 13.7406 17.8615 15 15.5 15C11.9101 15 9 12.0899 9 8.5C9 6.13845 10.2594 4.07105 12.1432 2.93276C12.5392 2.69347 12.4627 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
+      </svg>
+    </div>
+  </div>
+
+  <ul
+    class="flex scale-[1.15] cursor-pointer flex-col items-end gap-8 pr-10 text-xl font-normal text-brand-secondary transition-all md:scale-100 md:flex-row md:items-baseline md:gap-8 md:text-lg dark:text-bg-lighter">
+    <li class="nav-link">
+      <a href="index.php">Home</a>
+    </li>
+    <li class="nav-link">
+      <a href="pages/products.php">Shop</a>
+    </li>
+    <li class="for-logged-in nav-link group hidden pr-12">
+      <a href="pages/profile.php">
+        Your profile
+        <img
+          class="absolute bottom-2 right-[-4px] aspect-square w-10 rounded-full ring-2 ring-bg-darker dark:ring-bg-lighter"
+          src="res/user_img/PROFILE_USER_IMG"
+          alt="Profile Image Miniature" />
+      </a>
+    </li>
+    <li class="for-logged-out nav-link hidden">
+      <a id="login-btn">Log in</a>
+    </li>
+    <li class="for-logged-in nav-link hidden">
+      <a id="logout-btn" href="../phonezone/scripts/logout.php">Log out</a>
+    </li>
+  </ul>
+  <div
+    class="fixed left-4 top-8 z-[900] aspect-square w-8 cursor-pointer self-end pr-8 md:relative md:left-0 md:top-[-36px] md:scale-90">
+    <div
+      style="transform: translate(50%, -100%)"
+      class="absolute right-0 top-0 z-50 aspect-square h-4 place-items-center">
+      <span
+        class="absolute inset-0 hidden aspect-square h-4 rounded-sm bg-brand-primary-500-neutral animate-once"
+        id="basket-counter-ping"></span>
+      <span
+        id="basket-counter"
+        class="absolute inset-0 m-0 flex hidden aspect-square h-4 items-center justify-center rounded-sm bg-brand-primary-500-neutral p-0 text-sm text-bg-lighter"></span>
+    </div>
+    <svg
+      id="nav-basket"
+      style="top: -10px"
+      class="group absolute h-full w-8"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        class="transition-fill absolute top-[-0.5rem] fill-brand-secondary duration-300 hover:fill-brand-secondary-200 dark:fill-bg-lighter"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M9.99976 2.25C9.30136 2.25 8.69851 2.65912 8.4178 3.25077C7.73426 3.25574 7.20152 3.28712 6.72597 3.47298C6.15778 3.69505 5.66357 4.07255 5.29985 4.5623C4.93292 5.05639 4.76067 5.68968 4.5236 6.56133L4.47721 6.73169L3.96448 9.69473C3.77895 9.82272 3.61781 9.97428 3.47767 10.1538C2.57684 11.3075 3.00581 13.0234 3.86376 16.4552C4.40943 18.6379 4.68227 19.7292 5.49605 20.3646C6.30983 21 7.43476 21 9.68462 21H14.3153C16.5652 21 17.6901 21 18.5039 20.3646C19.3176 19.7292 19.5905 18.6379 20.1362 16.4552C20.9941 13.0234 21.4231 11.3075 20.5222 10.1538C20.382 9.97414 20.2207 9.82247 20.035 9.69442L19.5223 6.73169L19.4759 6.56133C19.2388 5.68968 19.0666 5.05639 18.6997 4.5623C18.336 4.07255 17.8417 3.69505 17.2736 3.47298C16.798 3.28712 16.2653 3.25574 15.5817 3.25077C15.301 2.65912 14.6982 2.25 13.9998 2.25H9.99976ZM18.4177 9.14571L18.0564 7.05765C17.7726 6.01794 17.6696 5.69121 17.4954 5.45663C17.2996 5.19291 17.0335 4.98964 16.7275 4.87007C16.5077 4.78416 16.2421 4.75888 15.5803 4.75219C15.299 5.34225 14.697 5.75 13.9998 5.75H9.99976C9.30252 5.75 8.70052 5.34225 8.41921 4.75219C7.75738 4.75888 7.4918 4.78416 7.272 4.87007C6.96605 4.98964 6.69994 5.19291 6.50409 5.45662C6.32988 5.6912 6.22688 6.01794 5.9431 7.05765L5.58176 9.14577C6.57992 9 7.9096 9 9.68462 9H14.3153C16.0901 9 17.4196 9 18.4177 9.14571ZM8 12.25C8.41421 12.25 8.75 12.5858 8.75 13V17C8.75 17.4142 8.41421 17.75 8 17.75C7.58579 17.75 7.25 17.4142 7.25 17V13C7.25 12.5858 7.58579 12.25 8 12.25ZM16.75 13C16.75 12.5858 16.4142 12.25 16 12.25C15.5858 12.25 15.25 12.5858 15.25 13V17C15.25 17.4142 15.5858 17.75 16 17.75C16.4142 17.75 16.75 17.4142 16.75 17V13ZM12 12.25C12.4142 12.25 12.75 12.5858 12.75 13V17C12.75 17.4142 12.4142 17.75 12 17.75C11.5858 17.75 11.25 17.4142 11.25 17V13C11.25 12.5858 11.5858 12.25 12 12.25Z" />
+    </svg>
+  </div>
+
+  <div
+    class="logo relative mb-4 ml-12 mr-4 mt-4 hidden scale-75 md:block lg:scale-100">
+    <a href="index.php">
+      <img src="res/pz_logo_1_dark.svg" alt="Store Logo" width="250" />
+    </a>
+  </div>
+</nav>
+<div
+  id="msg-box"
+  class="absolute bottom-32 left-4 right-4 z-[500] mx-auto hidden h-fit w-fit max-w-[75vw] scale-125 animate-fade-down rounded-sm bg-bg-info px-4 py-2 text-center text-bg-lighter animate-delay-[3000ms] animate-reverse animate-duration-300 motion-reduce:animate-[fade-down_0ms_forwards] motion-reduce:animate-delay-[3000ms] motion-reduce:animate-reverse md:top-4 md:scale-100">
+  <p>&nbsp;</p>
+</div>

@@ -1,0 +1,56 @@
+<div
+  class="admin-page-user-card relative mx-auto flex min-h-32 w-11/12 flex-col items-start rounded-sm border p-4 pl-8 shadow-md sm:grid sm:grid-cols-9 sm:grid-rows-2 sm:justify-self-end sm:pl-4">
+  <p
+    class="insert-user-id absolute left-0 top-0 rounded-br-sm border-b border-r border-bg-darker bg-bg-light px-1 text-sm font-semibold dark:border-bg-lighter dark:bg-bg-darker">
+    USER_ID
+  </p>
+  <p
+    class="insert-user-name row-start-1 self-start pe-2 text-lg font-semibold sm:col-span-3 sm:self-center">
+    USER_NAME
+  </p>
+  <p class="insert-user-email row-start-2 break-all pe-2 text-sm sm:col-span-5">
+    USER_EMAIL
+  </p>
+  <p
+    class="insert-user-registration self-start pe-2 text-sm sm:col-span-2 sm:self-center">
+    USER_REGISTRATION
+  </p>
+  <p class="insert-user-role self-start pe-8 text-sm sm:self-center">
+    USER_ROLE
+  </p>
+  <p class="insert-user-auth self-start pe-2 text-sm sm:self-center">
+    USER_AUTH_METHOD
+  </p>
+  <div
+    class="absolute bottom-4 right-2 col-span-2 col-end-10 row-span-2 flex w-fit grow scale-90 flex-row justify-end gap-4 sm:bottom-auto sm:right-0 sm:flex sm:w-full sm:flex-col sm:items-end sm:self-center sm:justify-self-end">
+    <div
+      class="forbidden flex hidden cursor-not-allowed flex-col items-center justify-end gap-2 text-sm font-bold">
+      <p>Edit reserved</p>
+      <svg
+        class="aspect-square w-8"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 512 512"
+        xml:space="preserve">
+        <path
+          class="fill-brand-primary-400"
+          d="M256,0C114.615,0,0,114.615,0,256s114.615,256,256,256s256-114.615,256-256S397.385,0,256,0z" />
+        <path
+          class="fill-bg-lighter"
+          d="M409.474,283.1c0,8.378-6.791,15.169-15.169,15.169H117.692c-8.378,0-15.169-6.791-15.169-15.169
+	v-54.2c0-8.378,6.791-15.169,15.169-15.169h276.614c8.378,0,15.169,6.791,15.169,15.169V283.1z" />
+      </svg>
+      <p>for the owner</p>
+    </div>
+    <button type="button" class="edit-btn btn-info w-24">
+      <span></span>
+      <span></span>
+      <span>Edit</span>
+    </button>
+    <button type="button" class="del-btn btn-warning w-24">
+      <span></span>
+      <span></span>
+      <span>Delete</span>
+    </button>
+  </div>
+</div>

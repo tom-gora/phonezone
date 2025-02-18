@@ -1,0 +1,32 @@
+<dialog
+  id="del-dialog"
+  class="flex-col items-center gap-5 rounded-sm bg-bg-light px-8 py-4 text-brand-secondary shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px] backdrop:bg-[rgba(0,_0,_0,_0.6)] md:mt-24 dark:bg-surface-dark-100 dark:text-bg-lighter">
+  <h1 class="text-center text-xl font-bold">Delete user</h2>
+  <p id="del-confirmation-box" class="py-5 text-sm"></p>
+  <form action="../scripts/admin_functionality.php" method="POST">
+    <input type="hidden" name="del-user-id" value="delete_user" />
+    <div class="mx-auto flex w-53 flex-col gap-4">
+      <button
+        type="submit"
+        id="del-dialog-confirm-btn"
+        class="btn-warning w-full">
+        <span></span>
+        <span></span>
+        <span>Confirm and delete</span>
+      </button>
+      <!-- button animation source: https://devdojo.com/tailwindcss/buttons -->
+      <button
+        autofocus
+        type="button"
+        class="btn-neutral w-full"
+        id="del-dialog-close">
+        <span></span>
+        <span></span>
+        <span>Cancel</span>
+      </button>
+    </div>
+    <p class="p-3 pt-4 text-center text-sm font-bold text-brand-primary-400">
+      Caution! This action is permanent.
+    </p>
+  </form>
+</dialog>

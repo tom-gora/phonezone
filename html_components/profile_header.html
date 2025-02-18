@@ -1,0 +1,52 @@
+<div
+  class="relative mt-24 flex h-fit w-11/12 flex-col items-center justify-center gap-2 rounded-sm bg-bg-light md:mb-8 md:mt-4 md:w-10/12 md:flex-row dark:bg-bg-darker">
+  <div
+    class="flex h-fit w-full max-w-[60%] flex-col gap-2 self-end p-4 sm:pr-16 md:w-fit md:items-end md:self-center md:pr-2">
+    <h3 class="mb-2 text-xl font-bold">Your info:</h3>
+    <p>PROFILE_USER_NAME</p>
+    <p>
+      <span class="font-bold">Email: &nbsp;</span>
+      <br class="md:hidden" />
+      PROFILE_USER_EMAIL
+    </p>
+    <p>
+      <span class="font-bold">Registered on:&nbsp;</span>
+      <br class="md:hidden" />
+      PROFILE_USER_REGISTRATION_DATE
+    </p>
+    <p class="role hidden grow">
+      <span class="font-bold">You are:&nbsp;</span>
+      <br class="md:hidden" />
+      PROFILE_USER_ROLE
+    </p>
+  </div>
+  <div
+    class="absolute left-2 top-12 m-4 grid aspect-square max-w-28 animate-jump-in items-center overflow-hidden rounded-sm animate-duration-300 animate-ease-out sm:left-12 md:static md:top-2 md:flex md:w-28 md:justify-center">
+    <img
+      style="clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 94%)"
+      class="aspect-square h-24 rounded-sm border-[6px] border-bg-lighter transition-all duration-300 ease-out hover:scale-105 hover:border-surface-dark-300"
+      src="../res/user_img/PROFILE_USER_IMG"
+      alt="User image" />
+  </div>
+  <div
+    class="flex h-min w-full items-start justify-around gap-4 p-2 md:w-52 md:flex-col">
+    <button type="button" id="edit-profile-btn" class="btn-info w-full">
+      <span></span>
+      <span></span>
+      <span>Edit profile</span>
+    </button>
+    <button type="button" id="delete-profile-btn" class="btn-warning w-full">
+      <span></span>
+      <span></span>
+      <span>Delete profile</span>
+    </button>
+    <button
+      type="button"
+      onclick="window.location.href='../pages/admin.php'"
+      class="btn-primary hidden w-full">
+      <span></span>
+      <span></span>
+      <span>Admin Panel</span>
+    </button>
+  </div>
+</div>

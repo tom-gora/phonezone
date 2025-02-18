@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.22.2",
+    "daisyui": "^4.9.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.13",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animated": "^1.0.1"
+  },
+  "scripts": {
+    "build-css": "tailwind build css/styles.css -o css/output/tailwind-styles.css"
+  }
+}

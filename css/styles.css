@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-link {
+    @apply relative h-10 cursor-pointer transition-all duration-300 motion-reduce:transition-none;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-0 w-full origin-right scale-x-0 border-[1px] border-t-0 border-b-brand-secondary transition-all duration-300 ease-in-out motion-reduce:transition-none dark:border-b-bg-lighter;
+  }
+
+  .nav-link:hover::after,
+  .nav-link:focus::after {
+    @apply scale-x-100;
+  }
+
+  .divider {
+    @apply relative -z-10 my-4 h-1 w-full border-t-2 border-brand-secondary bg-none dark:border-bg-light dark:text-bg-light;
+  }
+
+  .divider-or {
+    @apply absolute left-[50%] top-0 translate-x-[-50%] translate-y-[-60%] bg-bg-light px-2 dark:bg-surface-dark-100;
+  }
+
+  /* buttons */
+  /* active behavior  */
+  .btn-neutral:active,
+  .btn-primary:active,
+  .btn-warning:active,
+  .btn-info:active {
+    scale: 0.98;
+    filter: invert(10%);
+  }
+
+  /* neutral button */
+  .btn-neutral {
+    @apply relative inline-block  min-h-[2.5rem] rounded-sm px-4 py-2 font-medium;
+  }
+
+  .btn-neutral span:nth-child(1) {
+    @apply absolute inset-0 h-full w-full translate-x-[2px] translate-y-[2px] transform rounded-sm bg-bg-darker transition-all duration-300 ease-in-out  dark:bg-bg-lighter;
+  }
+
+  .btn-neutral:hover span:nth-child(1),
+  .btn-neutral:focus-visible span:nth-child(1) {
+    @apply translate-x-0 translate-y-0;
+  }
+
+  .btn-neutral span:nth-child(2) {
+    @apply absolute inset-0 h-full w-full rounded-sm border-2 border-bg-darker bg-bg-lighter transition-all duration-300 ease-in-out dark:border-bg-lighter dark:bg-bg-darker;
+  }
+
+  .btn-neutral:hover span:nth-child(2),
+  .btn-neutral:focus-visible span:nth-child(2) {
+    @apply bg-bg-darker dark:bg-bg-lighter;
+  }
+
+  .btn-neutral span:nth-child(3) {
+    @apply relative text-bg-darker transition-all duration-300 ease-in-out dark:text-bg-lighter;
+  }
+
+  .btn-neutral:hover span:nth-child(3),
+  .btn-neutral:focus-visible span:nth-child(3) {
+    @apply text-bg-lighter dark:text-bg-darker;
+  }
+
+  /* primary button */
+  .btn-primary {
+    @apply relative inline-block  min-h-[2.5rem] rounded-sm px-4 py-2 font-medium;
+  }
+
+  .btn-primary span:nth-child(1) {
+    @apply absolute inset-0 h-full w-full translate-x-[2px] translate-y-[2px]
+    transform rounded-sm bg-brand-secondary transition-all duration-300 ease-in-out
+    dark:bg-bg-lighter;
+  }
+
+  .btn-primary:hover span:nth-child(1),
+  .btn-primary:focus-visible span:nth-child(1) {
+    @apply translate-x-0 translate-y-0;
+  }
+
+  .btn-primary span:nth-child(2) {
+    @apply absolute inset-0 h-full w-full rounded-sm border-2 border-brand-secondary
+    bg-bg-lighter transition-all duration-300 ease-in-out
+    dark:border-bg-lighter dark:bg-brand-secondary;
+  }
+
+  .btn-primary:hover span:nth-child(2),
+  .btn-primary:focus-visible span:nth-child(2) {
+    @apply bg-brand-secondary dark:bg-bg-lighter;
+  }
+
+  .btn-primary span:nth-child(3) {
+    @apply relative text-bg-darker transition-all duration-300 ease-in-out
+    dark:text-bg-lighter;
+  }
+
+  .btn-primary:hover span:nth-child(3),
+  .btn-primary:focus-visible span:nth-child(3) {
+    @apply text-bg-lighter dark:text-bg-darker;
+  }
+
+  /* warning button */
+  .btn-warning {
+    @apply relative inline-block  min-h-[2.5rem] rounded-sm px-4 py-2 font-medium;
+  }
+
+  .btn-warning span:nth-child(1) {
+    @apply absolute inset-0 h-full w-full translate-x-[2px] translate-y-[2px]
+    transform rounded-sm bg-brand-primary-400 transition-all duration-300 ease-in-out
+    dark:bg-bg-lighter;
+  }
+
+  .btn-warning:hover span:nth-child(1),
+  .btn-warning:focus-visible span:nth-child(1) {
+    @apply translate-x-0 translate-y-0;
+  }
+
+  .btn-warning span:nth-child(2) {
+    @apply absolute inset-0 h-full w-full rounded-sm border-2 border-brand-primary-400
+    bg-bg-lighter transition-all duration-300 ease-in-out
+    dark:border-bg-lighter dark:bg-brand-primary-400;
+  }
+
+  .btn-warning:hover span:nth-child(2),
+  .btn-warning:focus-visible span:nth-child(2) {
+    @apply bg-brand-primary-400 dark:bg-bg-lighter;
+  }
+
+  .btn-warning span:nth-child(3) {
+    @apply relative text-bg-darker transition-all duration-300 ease-in-out
+    dark:text-bg-lighter;
+  }
+
+  .btn-warning:hover span:nth-child(3),
+  .btn-warning:focus-visible span:nth-child(3) {
+    @apply text-bg-lighter dark:text-bg-darker;
+  }
+
+  /* info button */
+  .btn-info {
+    @apply relative inline-block   min-h-[2.5rem] rounded-sm px-4 py-2 font-medium;
+  }
+
+  .btn-info span:nth-child(1) {
+    @apply absolute inset-0 h-full w-full translate-x-[2px] translate-y-[2px]
+    transform rounded-sm bg-bg-info transition-all duration-300 ease-in-out
+    dark:bg-bg-lighter;
+  }
+
+  .btn-info:hover span:nth-child(1),
+  .btn-info:focus-visible span:nth-child(1) {
+    @apply translate-x-0 translate-y-0;
+  }
+
+  .btn-info span:nth-child(2) {
+    @apply absolute inset-0 h-full w-full rounded-sm border-2 border-bg-info
+    bg-bg-lighter transition-all duration-300 ease-in-out
+    dark:border-bg-lighter dark:bg-bg-info;
+  }
+
+  .btn-info:hover span:nth-child(2),
+  .btn-info:focus-visible span:nth-child(2) {
+    @apply bg-bg-info dark:bg-bg-lighter;
+  }
+
+  .btn-info span:nth-child(3) {
+    @apply relative text-bg-darker transition-all duration-300 ease-in-out
+    dark:text-bg-lighter;
+  }
+
+  .btn-info:hover span:nth-child(3),
+  .btn-info:focus-visible span:nth-child(3) {
+    @apply text-bg-lighter dark:text-bg-darker;
+  }
+
+  /* input fields */
+  .input-text-custom {
+    @apply w-full rounded-sm border-2 border-brand-secondary bg-bg-lighter px-2 py-2 text-brand-secondary dark:border-bg-darker dark:bg-surface-dark-300 dark:text-bg-lighter;
+  }
+}
+
+#overlay:has(+ #cart-sidebar:not(.hidden)) {
+  display: block;
+}
+
+body:has(#cart-sidebar:not(.hidden)) {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-card {
+  transform-style: preserve-3d;
+}
+
+.hero-card::after {
+  transform: translateZ(0.5rem);
+}
+
+.hero-card::before {
+  transform: translateZ(-0.5rem);
+}
+
+.hero-card.custom-animated {
+  animation: card-animation var(--duration) forwards ease-in-out;
+}
+
+.hero-description.custom-animated {
+  animation: description-animation var(--duration) forwards;
+}
+
+@keyframes card-animation {
+  0% {
+    rotate: y 90deg;
+  }
+
+  20% {
+    rotate: y 0deg;
+  }
+  80% {
+    rotate: y 0deg;
+  }
+
+  100% {
+    rotate: y -90deg;
+  }
+}
+
+@keyframes description-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+}
+
+.hero-card-front {
+  transform: translateZ(1rem);
+}

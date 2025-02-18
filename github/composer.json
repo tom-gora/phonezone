@@ -1,0 +1,5 @@
+{
+    "require": {
+        "league/oauth2-github": "^3.1"
+    }
+}

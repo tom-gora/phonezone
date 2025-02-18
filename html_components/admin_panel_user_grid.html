@@ -1,0 +1,53 @@
+<div class="container mx-auto mt-4 grow">
+  <h1 class="text-center text-3xl font-bold">Admin Panel</h1>
+  <div
+    class="mx-auto mb-8 mt-4 flex h-fit w-full items-center justify-around gap-2 px-4 sm:mb-16">
+    <button type="button" class="btn-neutral w-min-40 w-40">
+      <span></span>
+      <span></span>
+      <span>See products</span>
+    </button>
+    <button type="button" id="add-user-btn" class="btn-info w-min-40 w-40">
+      <span></span>
+      <span></span>
+      <span class="relative">+ ADD</span>
+    </button>
+  </div>
+  <div class="grid grid-cols-2">
+    <div
+      class="col-span-2 col-start-1 m-2 hidden w-11/12 grid-cols-9 justify-self-center rounded-sm bg-bg-light px-4 shadow-md sm:grid xl:col-span-1 xl:-translate-x-1 dark:bg-bg-darker">
+      <p class="col-span-3 font-bold text-bg-darker dark:text-bg-lighter">
+        Name / Email
+      </p>
+      <p class="col-span-2 font-bold text-bg-darker dark:text-bg-lighter">
+        Joined
+      </p>
+      <p
+        class="justify-self-start font-bold text-bg-darker dark:text-bg-lighter">
+        Role
+      </p>
+      <p
+        class="col-span-2 justify-self-start font-bold text-bg-darker dark:text-bg-lighter">
+        Auth method
+      </p>
+    </div>
+    <div
+      class="col-start-2 my-2 hidden w-11/12 grid-cols-9 justify-self-center rounded-sm bg-bg-light px-4 shadow-md xl:grid xl:translate-x-1 dark:bg-bg-darker">
+      <p class="col-span-3 font-bold text-bg-darker dark:text-bg-lighter">
+        Name / Email
+      </p>
+      <p class="col-span-2 font-bold text-bg-darker dark:text-bg-lighter">
+        Joined
+      </p>
+      <p
+        class="justify-self-start font-bold text-bg-darker dark:text-bg-lighter">
+        Role
+      </p>
+      <p
+        class="col-span-2 justify-self-start font-bold text-bg-darker dark:text-bg-lighter">
+        Auth method
+      </p>
+    </div>
+  </div>
+  <div id="users-grid" class="grid grid-cols-1 gap-4 xl:grid-cols-2"></div>
+</div>

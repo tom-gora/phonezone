@@ -1,0 +1,57 @@
+<div
+  id="product-view"
+  class="grid h-full w-full grow place-items-center bg-bg-light py-16 md:w-screen dark:bg-bg-darker">
+  <div class="flex w-svw flex-col items-center">
+    <h2 class="mb-2 px-4 text-3xl font-bold md:pb-16">PRODUCT_NAME</h2>
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="phone-card mx-auto flex w-10/12 flex-col md:flex-row"
+        data-product-id="PRODUCT_ID">
+        <div class="mx-auto items-center md:flex-1">
+          <div
+            class="mx-auto mb-4 flex max-w-[300px] justify-center rounded-lg md:max-h-[500px]">
+            <img
+              class="max-w-[300px] object-cover"
+              src="../res/phones/PRODUCT_IMG"
+              alt="PRODUCT_NAME" />
+          </div>
+          <div class="-mx-2 mb-4 flex justify-center">
+            <div class="flex flex-col justify-evenly gap-4 px-2 py-4">
+              <button class="btn-add-to-cart btn-info w-36">
+                <span></span>
+                <span></span>
+                <span>Add to Cart</span>
+              </button>
+              <button class="btn-neutral w-36" onclick="window.history.back()">
+                <span></span>
+                <span></span>
+                <span>Go back</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="w-10/12 px-4 md:flex-1">
+          <div class="mb-4 flex">
+            <div class="mr-4">
+              <span class="font-bold">Price:</span>
+              <span class="">£PRODUCT_PRICE</span>
+            </div>
+            <div>
+              <span class="font-bold">Availability:</span>
+              <span class="">In Stock</span>
+            </div>
+          </div>
+
+          <div>
+            <span class="font-bold">Product Description:</span>
+            <p class="mt-2 text-sm">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
+              ante justo. Integer euismod libero id mauris malesuada tincidunt.
+              Vivamus commodo nulla ut lorem rhoncus aliquet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,265 @@
+<div
+  id="overlay"
+  class="t-0 l-0 fixed z-[200] -mt-8 hidden h-full w-screen bg-bg-light opacity-60 dark:bg-bg-dark"></div>
+<div
+  id="cart-sidebar"
+  class="pb-24 fixed right-0 top-0 z-[201] hidden h-screen w-screen animate-fade-left overflow-y-scroll bg-bg-light p-4 text-brand-secondary animate-reverse animate-duration-300 md:mt-20 md:w-4/12 md:min-w-[500px] md:pl-6 md:pr-12 md:pt-8 dark:bg-bg-darker dark:text-bg-lighter">
+    <path
+      d="M15.1 3.1l-2.2-2.2-4.9 5-4.9-5-2.2 2.2 5 4.9-5 4.9 2.2 2.2 4.9-5 4.9 5 2.2-2.2-5-4.9z" />
+  </svg>
+  <h1 class="mb-4 ml-4 text-center text-2xl font-bold dark:text-bg-info">
+    Cart Summary
+  </h1>
+  <div
+    class="mx-auto items-center justify-start px-8 md:flex md:flex-col md:space-x-6 xl:px-0">
+    <div id="cart-products-wrapper" class="mt-12 w-full px-4"></div>
+
+    <!-- Sub total -->
+    <div class="mt-6 flex h-full w-full flex-col p-6 md:mt-0">
+      <div
+        id="order-summary-expand"
+        class="grid hidden w-full cursor-pointer grid-cols-3 items-start rounded-sm bg-bg-lighter p-2 dark:bg-bg-dark">
+        <span class="col-span-2 font-bold">Items in this order</span>
+        <button
+          type="button col-span-1"
+          style="justify-self: end; margin-top: 4px">
+          <svg
+            class="aspect-square w-4 stroke-brand-secondary dark:stroke-bg-lighter"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </g>
+          </svg>
+        </button>
+        <div class="col-span-3 flex flex-col">
+          <div
+            class="grid h-0 w-full transform grid-cols-10 opacity-0 duration-300 ease-in-out"
+            id="order-summary-wrapper"></div>
+        </div>
+      </div>
+      <div class="mb-2 flex justify-between px-2">
+        <p>Subtotal</p>
+        <p id="insert-subtotal"></p>
+      </div>
+      <div class="flex justify-between px-2">
+        <p>Shipping</p>
+        <p id="insert-shipping"></p>
+      </div>
+
+      <div
+        class="mt-4 flex justify-between border-t-2 border-t-brand-secondary px-2 pt-4 dark:border-t-bg-info">
+        <p class="text-lg font-bold">Total</p>
+        <div class="">
+          <p
+            id="insert-total-with-shipping"
+            class="mb-1 text-end text-lg font-bold"></p>
+        </div>
+      </div>
+      <button
+        id="checkout-btn"
+        class="btn-primary dark:btn-info mt-8 w-8/12 self-center">
+        <span></span>
+        <span></span>
+        <span>Check out</span>
+      </button>
+      <button
+        id="cart-sidebar-innner-close-btn"
+        class="btn-warning mt-8 w-8/12 self-center">
+        <span></span>
+        <span></span>
+        <span class="whitespace-nowrap">Back to shopping</span>
+      </button>
+
+    </div>
+
+    <!-- Adapted from https://flowbite.com/blocks/e-commerce/payment-forms/ -->
+    <!-- redone to use native html features, most obviously datepicker that does not need third party js scripts -->
+
+    <div
+      class="hidden max-w-md rounded-sm bg-bg-lighter p-4 dark:bg-bg-dark"
+      id="payment-wrapper">
+      <div class="mx-auto px-4 2xl:px-0">
+        <div class="mx-auto max-w-5xl">
+          <h2
+            class="text-center text-xl font-semibold sm:text-2xl dark:text-bg-lighter">
+            Payment
+          </h2>
+          <p
+            class="my-4 w-full rounded-sm bg-brand-primary-100 py-1 text-center text-xs text-brand-primary-800">
+            This form is just a mock. It does not submit any data anywhere.
+            Still, do not enter any real data. The order will be saved in your
+            order history.
+          </p>
+          <div class="mt-6 flex flex-col sm:mt-8 lg:items-start lg:gap-8">
+            <form
+              action="index.php"
+              id="payment-form"
+              class="flex w-full flex-col rounded-sm sm:p-2 lg:max-w-xl lg:p-0">
+              <div class="mb-6 grid grid-cols-2 gap-4">
+                <div class="col-span-2">
+                  <label
+                    for="card-number-input"
+                    class="mb-2 block text-sm font-medium dark:text-bg-lighter">
+                    Card number
+                    <input
+                      type="text"
+                      id="card-number-input"
+                      class="input-text-custom mt-1"
+                      placeholder="xxxx-xxxx-xxxx-xxxx"
+                      pattern="^(?:4[0-9]{15}|5[1-5][0-9]{14}|6(?:011|5[0-9]{2})[0-9]{12}|3[47][0-9]{13})$"
+                      required />
+                  </label>
+                </div>
+                <div class="col-span-2">
+                  <label
+                    for="full_name"
+                    class="text-gray-900 mb-2 block text-sm font-medium dark:text-bg-lighter">
+                    Full name
+                    <input
+                      type="text"
+                      id="full_name"
+                      class="input-text-custom mt-1"
+                      placeholder="Your name as shown on the card"
+                      required />
+                  </label>
+                </div>
+
+                <div>
+                  <label
+                    for="card-expiration-input"
+                    class="text-gray-900 mb-2 block text-sm font-medium dark:text-bg-lighter">
+                    Card expiration
+                    <div class="relative mt-1">
+                      <div
+                        class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5"></div>
+                      <input
+                        onfocus="(this.style.color = 'currentColor')"
+                        onblur="(this.getAttribute('changed') !== 'true' ? this.style.color = '#6b7280': null)"
+                        style="color: #6b7280"
+                        onchange="this.style.color = 'currentColor'; this.setAttribute('changed', true);"
+                        id="card-expiration-input"
+                        type="date"
+                        class="input-text-custom"
+                        required />
+                    </div>
+                  </label>
+                </div>
+                <div>
+                  <label
+                    for="cvv-tooltip-trigger"
+                    class="relative flex flex-col items-start gap-1 text-sm font-medium dark:text-bg-lighter">
+                    <div class="flex gap-2">
+                      <span>CVV</span>
+                      <button id="cvv-tooltip-trigger" class="relative w-full">
+                        <svg
+                          class="h-4 w-4 fill-brand-secondary dark:fill-bg-lighter"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 24 24"
+                          xml:space="preserve">
+                          <style type="text/css">
+                            .st0 {
+                              fill: none;
+                            }
+                          </style>
+                          <path
+                            d="M20,2H4C2.9,2,2,2.9,2,4v16c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V4C22,2.9,21.1,2,20,2z M11,7h2v2h-2V7z M11,11h2v6h-2V11z" />
+                          <rect class="st0" width="16" height="16" />
+                        </svg>
+                        <span
+                          id="cvv-tooltip"
+                          class="w-content absolute -right-12 -top-[18px] z-50 hidden whitespace-nowrap rounded-sm bg-bg-info px-2 py-1 text-xs text-bg-lighter"></span>
+                      </button>
+                    </div>
+                    <input
+                      type="number"
+                      min="000"
+                      max="999"
+                      id="cvv-input"
+                      aria-describedby="helper-text-explanation"
+                      class="input-text-custom"
+                      placeholder="•••"
+                      required />
+                  </label>
+                </div>
+              </div>
+
+              <div class="flex scale-90 justify-around">
+                <button type="submit" class="btn-neutral mx-auto">
+                  <span></span>
+                  <span></span>
+                  <span>Pay now</span>
+                </button>
+
+                <button
+                  id="payment-go-back-btn"
+                  type="button"
+                  class="btn-warning mx-auto">
+                  <span></span>
+                  <span></span>
+                  <span>Go back</span>
+                </button>
+              </div>
+            </form>
+
+            <div
+              class="flex w-full scale-75 items-center justify-center gap-8 pt-4">
+              <img
+                class="h-8 w-auto dark:hidden"
+                src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/visa.svg"
+                alt="" />
+              <img
+                class="hidden h-8 w-auto dark:flex"
+                src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/visa-dark.svg"
+                alt="" />
+              <img
+                class="h-8 w-auto dark:hidden"
+                src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/mastercard.svg"
+                alt="" />
+              <img
+                class="hidden h-8 w-auto dark:flex"
+                src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/mastercard-dark.svg"
+                alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="mt-4 text-center text-sm">
+        Payment processed by
+        <a
+          href="#"
+          title=""
+          class="text-primary-700 dark:text-primary-500 font-medium underline hover:no-underline">
+          MockFinances Inc.
+        </a>
+        for
+        <a
+          href="#"
+          title=""
+          class="text-primary-700 dark:text-primary-500 font-medium underline hover:no-underline">
+          PrettyPretend LTD
+        </a>
+        <br />
+        <span class="text-xs">Republic of Neverland</span>
+      </p>
+    </div>
+  </div>
+</div>

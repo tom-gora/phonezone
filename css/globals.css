@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Fjalla+One&display=swap");
+/* hosted fallback */
+@font-face {
+  font-family: "Cantarell";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../res/fonts/Cantarell/Cantarell-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Fjalla One";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../res/fonts/Fjalla_One/FjallaOne-Regular.ttf") format("truetype");
+}
+
+/* custom declarations for brand colors */
+:root {
+  font-family: "Cantarell", sans-serif, system-ui;
+  font-weight: 300;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  .nav-link {
+    font-family: "Fjalla One", Arial, Helvetica, sans-serif;
+  }
+
+  --background-light: #e4e4e7;
+  --background-dark: #9ca3af;
+  --brand-color-blue: #0d72b9;
+  --brand-color-green: #3ab54b;
+  --brand-neutral: #d61010;
+  --brand-600: #6b0808;
+  --brand-color-light-blue: color-mix(
+    in lab,
+    var(--brand-color-blue) 30%,
+    #fff 70%
+  );
+  --brand-color-light-green: color-mix(
+    in lab,
+    var(--brand-color-green) 30%,
+    #fff 70%
+  );
+  --brand-color-dark-blue: color-mix(
+    in lab,
+    var(--brand-color-blue) 70%,
+    #000 30%
+  );
+  --brand-color-dark-green: color-mix(
+    in lab,
+    var(--brand-color-green) 70%,
+    #000 30%
+  );
+}
+
+/* handle theme styles */
+:root[data-theme="light"] body {
+  color: #020617;
+  background: #f3f4f6;
+}
+:root[data-theme="dark"] body {
+  color: #f3f4f6;
+  background: #252525;
+}
+
+a:focus-visible,
+button:focus-visible,
+button:focus-visible,
+select:focus-visible,
+input[type="text"]:focus-visible,
+input[type="email"]:focus-visible,
+input[type="password"]:focus-visible {
+  border-radius: 2px;
+  outline: 4px double #009a80;
+}
+
+:root[data-theme="dark"] #theme-toggle::after {
+  transform: translateX(24px);
+  background: #6e5387;
+}
+
+:root[data-theme="light"] #theme-toggle::after {
+  transform: translateX(0px);
+  background: #161f45;
+}
+
+:root[data-theme="light"] #theme-toggle-sun path {
+  fill: #fbbf24;
+}
+
+:root[data-theme="dark"] #theme-toggle-sun path {
+  fill: #535353;
+}
+
+:root[data-theme="light"] #theme-toggle-moon path {
+  fill: #535353;
+}
+
+:root[data-theme="dark"] #theme-toggle-moon path {
+  fill: #f3f4f6;
+}
+
+/* set up locally scoped vars for the toggle  */
+#theme-toggle {
+  --theme_transition: all 0.3s ease-in-out;
+}
+
+#theme-toggle::after {
+  z-index: 100;
+  content: "";
+  position: absolute;
+  height: 20px;
+  top: 2px;
+  left: 2px;
+  aspect-ratio: 1/1;
+  transition: var(--theme_transition);
+  border-radius: 4px;
+}
+
+#theme-toggle svg {
+  z-index: 101;
+}
+
+#theme-toggle svg path {
+  transition: var(--theme_transition);
+  border-radius: 2px;
+}
+
+/* too much hassle to set it up with TW */
+@media (width > 768px) {
+  #navigation {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw));
+  }
+
+  #products-grid-wrapper,
+  #product-view,
+  #profile-purchases-details {
+    clip-path: polygon(0 0, 100% 2vw, 100% 100%, 0 100%);
+  }
+}
+
+/* navigation logo underscore because fuck working with pseudoelements using tailwind */
+#navigation .logo:not(#mobile-store-logo)::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: var(--brand-600);
+  scale: 0 1;
+  transition: all 0.3s ease-in-out;
+  bottom: 6px;
+  right: -0.4rem;
+  transform-origin: right;
+}
+
+#navigation .logo:not(#mobile-store-logo):hover::after {
+  scale: 0.73 1;
+}
+
+/* extra styling on the contact admin message. css because markup
+ is being dynamically injected and swapped by js so dom nodes do not persist */
+#msg-box {
+  color: #f3f4f6;
+}
+.email-admin {
+  transition: 200ms;
+  font-weight: bold;
+}
+.email-admin:hover,
+.email-admin:focus {
+  color: #9dd5d5;
+}
+
+/* another pseudoelement done easier with css */
+.profile-section-title::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: -0.5rem;
+  transform: scaleX(1.5);
+  transform-origin: bottom left;
+  border-bottom: 1px solid #0b0b0b;
+}
+
+:root[data-theme="dark"] .profile-section-title::after {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+/* inputs */
+input[type="number"] {
+  position: relative !important;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  position: absolute !important;
+  margin: 0 !important;
+}
+/*   -webkit-appearance: none; */
+/*   color: white; */
+/*   background: red !important; */
+/*   appearance: none; */
+/*   margin: 0; */
+/* } */
+
+.card-3d {
+  transform: skewY(0.5deg);
+  padding: 2rem 1rem;
+  background-size: cover;
+  text-align: center;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: perspective-3d;
+  inset: 0;
+  z-index: 1;
+}
+
+.card-3d::after {
+  content: "";
+  position: absolute;
+  /* background: rgba(255, 255, 255, 0.5); */
+  z-index: 2;
+  inset: 0;
+  transform: translateZ(0.5rem);
+}
+
+.card-3d::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  transform: translateZ(-0.1px) translate(0.33rem, 0.33rem);
+  background: red;
+}
+
+.card-3d-wrapper:hover:first-child {
+  animation: half-turn 1s forwards;
+}
+
+@keyframes half-turn {
+  0% {
+    rotate: y 0deg;
+  }
+  100% {
+    rotate: y 90deg;
+  }
+}
+
+.card-3d > div {
+  border: 1px red solid;
+  transform: skewY(-0.5deg);
+  transform: perspective-3d;
+  transform: translateZ(2rem);
+}
